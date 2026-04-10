@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	# Artık isimle değil, grup üyeliğiyle kontrol ediyoruz
 	if body.is_in_group("players"):
 		print("DÜŞMAN YAKALADI! Oyun sıfırlanıyor...")
-		get_tree().reload_current_scene()
+		# Direkt çağırmak yerine, güvenli bir ana erteliyoruz:
+		get_tree().call_deferred("reload_current_scene")

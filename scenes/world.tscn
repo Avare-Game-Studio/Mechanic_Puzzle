@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://diub5pj3k5sap" path="res://scenes/Player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://bnhyjn4mt58nm" path="res://icon.svg" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c5y7xyaxogvqj" path="res://scenes/enemy.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://7iolhqd6di45" path="res://scenes/coin.tscn" id="4_k0juu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
 
@@ -164,5 +165,14 @@ position = Vector2(155, 749)
 
 [node name="Enemy3" parent="." unique_id=448985073 instance=ExtResource("3_4wyf3")]
 position = Vector2(801, 986)
+
+[node name="Coin" parent="." unique_id=1419047894 instance=ExtResource("4_k0juu")]
+position = Vector2(601.3032, 292.81635)
+
+[node name="Coin2" parent="." unique_id=379872988 instance=ExtResource("4_k0juu")]
+position = Vector2(411, 717)
+
+[node name="Coin3" parent="." unique_id=660160196 instance=ExtResource("4_k0juu")]
+position = Vector2(792, 526)
 
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]

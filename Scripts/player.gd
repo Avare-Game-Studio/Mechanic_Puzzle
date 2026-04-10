@@ -18,12 +18,19 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		print("yön: ", direction)
 		velocity.x = direction * SPEED
+		if direction > 0:
+			$Sprite2D.flip_h = false # Sağa bak
+		elif direction < 0:
+			$Sprite2D.flip_h = true  # Sola bak (Yatayda çevir)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	if global_position.y > 1000: # Karakter çok aşağı düştüyse
+		get_tree().reload_current_scene() # Bölümü yeniden başlat
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print("Bir şey alana girdi!")

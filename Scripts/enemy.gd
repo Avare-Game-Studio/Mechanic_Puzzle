@@ -11,12 +11,12 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _process(delta: float) -> void:
-	# İleri geri hareket mantığı
-	position.x += speed * delta * direction
+	var current_speed = speed + (GameManager.score * 0.5)
+	position.x += current_speed * delta * direction
 	
-	# Başlangıç noktasından çok uzaklaştıysa geri dön
 	if abs(position.x - start_pos.x) > distance:
 		direction *= -1
+		$Sprite2D.flip_h = direction > 0
 
 
 func _on_body_entered(body: Node2D) -> void:

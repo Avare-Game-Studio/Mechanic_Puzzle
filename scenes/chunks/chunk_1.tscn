@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbkuj5lovrq0t"]
+
+[ext_resource type="TileSet" uid="uid://c7qt2nybdk7p8" path="res://assets/kenney_pixel-platformer/Tilemap/main_tileset.tres" id="1_gcvhk"]
+
+[node name="Chunk_1" type="Node2D" unique_id=2132293712]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=911901223]
+tile_set = ExtResource("1_gcvhk")

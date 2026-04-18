@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diub5pj3k5sap"]
 
 [ext_resource type="Script" uid="uid://bsny5bcgmpm23" path="res://Scripts/player.gd" id="1_v6fml"]
-[ext_resource type="Texture2D" uid="uid://bnhyjn4mt58nm" path="res://icon.svg" id="2_3li8b"]
+[ext_resource type="Texture2D" uid="uid://ctdvvwml1cbov" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="2_v6fml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vejd"]
 
@@ -12,7 +12,7 @@ script = ExtResource("1_v6fml")
 shape = SubResource("RectangleShape2D_4vejd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=484178112]
-texture = ExtResource("2_3li8b")
+texture = ExtResource("2_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=914657517]
 position_smoothing_enabled = true

@@ -11,6 +11,9 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _process(delta: float) -> void:
+	if GameManager.is_game_over:
+		return
+
 	var current_speed = speed + (GameManager.score * 0.5)
 	position.x += current_speed * delta * direction
 	
@@ -21,6 +24,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("players"):
-		print("DÜŞMAN YAKALADI! Oyun sıfırlanıyor...")
-		# Direkt çağırmak yerine, güvenli bir ana erteliyoruz:
-		get_tree().call_deferred("reload_current_scene")
+		GameManager.end_run()

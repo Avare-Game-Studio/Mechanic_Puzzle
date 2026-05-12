@@ -5,6 +5,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 func _physics_process(delta: float) -> void:
+	if GameManager.is_game_over:
+		velocity = Vector2.ZERO
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -25,7 +29,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	if global_position.y > 1500: 
-		get_tree().reload_current_scene() 
+		GameManager.end_run()
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:

@@ -17,15 +17,6 @@ var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
 var dash_direction: float = 1.0
 
-func _ready() -> void:
-	if InputMap.has_action("dash"):
-		return
-
-	InputMap.add_action("dash")
-	var dash_key = InputEventKey.new()
-	dash_key.physical_keycode = KEY_X
-	InputMap.action_add_event("dash", dash_key)
-
 func _physics_process(delta: float) -> void:
 	if GameManager.is_game_over:
 		velocity = Vector2.ZERO
@@ -80,6 +71,12 @@ func _physics_process(delta: float) -> void:
 func start_dash() -> void:
 	dash_timer = dash_duration
 	dash_cooldown_timer = dash_cooldown
+
+func get_dash_ready_ratio() -> float:
+	if dash_cooldown <= 0.0:
+		return 1.0
+
+	return 1.0 - clampf(dash_cooldown_timer / dash_cooldown, 0.0, 1.0)
 
 func check_fall_death() -> void:
 	if global_position.y > 1500: 

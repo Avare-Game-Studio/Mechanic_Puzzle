@@ -37,6 +37,14 @@ offset_bottom = 76.0
 theme_override_font_sizes/font_size = 18
 text = "Best: 0"
 
+[node name="DashLabel" type="Label" parent="HUD"]
+offset_left = 24.0
+offset_top = 78.0
+offset_right = 224.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 18
+text = "Dash: Ready"
+
 [node name="GameOverPanel" type="PanelContainer" parent="HUD"]
 visible = false
 offset_left = 362.0

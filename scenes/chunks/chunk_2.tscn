@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dj0tv41vlm684" path="res://assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="2_r0oaa"]
 [ext_resource type="PackedScene" uid="uid://c5y7xyaxogvqj" path="res://scenes/enemy.tscn" id="3_sycl1"]
 [ext_resource type="PackedScene" uid="uid://7iolhqd6di45" path="res://scenes/coin.tscn" id="4_b3rqd"]
+[ext_resource type="PackedScene" path="res://scenes/hazard.tscn" id="5_5k1vp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4j5ut"]
 texture = ExtResource("2_r0oaa")
@@ -86,3 +87,6 @@ position = Vector2(345.00006, 1015)
 
 [node name="Coin3" parent="." unique_id=1525345139 instance=ExtResource("4_b3rqd")]
 position = Vector2(691, 962.00006)
+
+[node name="Hazard" parent="." instance=ExtResource("5_5k1vp")]
+position = Vector2(540, 1018)

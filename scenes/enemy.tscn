@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://c5y7xyaxogvqj"]
 
 [ext_resource type="Script" uid="uid://beabi57647jwi" path="res://Scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://bnhyjn4mt58nm" path="res://icon.svg" id="2_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://bqfiuku1dbrgd" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0012.png" id="2_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
-radius = 64.49806
+radius = 12.649111
 
 [node name="Enemy" type="Area2D" unique_id=138182700]
-scale = Vector2(0.5, 0.5)
 collision_layer = 2
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2145334601]
-modulate = Color(0.7126687, 0, 0.009266613, 1)
-texture = ExtResource("2_4ra3w")
+position = Vector2(2.3841858e-07, 2.3841858e-07)
+scale = Vector2(1.3333334, 1.25)
+texture = ExtResource("2_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744218016]
 shape = SubResource("CircleShape2D_5uy6h")

@@ -7,7 +7,7 @@ var start_pos: Vector2
 var direction: int = 1
 
 func _ready() -> void:
-	start_pos = global_position
+	start_pos = position 
 	body_entered.connect(_on_body_entered)
 
 func _process(delta: float) -> void:

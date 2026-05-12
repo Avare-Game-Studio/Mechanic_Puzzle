@@ -16,6 +16,7 @@ scale = Vector2(1, 1)
 [node name="LevelGenerator" type="Node2D" parent="." unique_id=49732901]
 script = ExtResource("5_qfnet")
 chunk_scenes = Array[PackedScene]([ExtResource("6_i7141"), ExtResource("4_71j4m"), ExtResource("5_i7141")])
+player_path = NodePath("../Player")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("6_vd17a")
